@@ -1,4 +1,5 @@
-package com.personal.Security.services;
+package com.personal.Security.service;
+
 
 import com.personal.Security.repository.RoleRepository;
 import com.personal.Security.repository.UserRepository;
@@ -11,19 +12,21 @@ import org.springframework.stereotype.Service;
 import java.util.HashSet;
 import java.util.Set;
 
-@Service
+
 public class AuthenticationService {
 
     //For Register
 
-    private RoleRepository roleRepository;
 
     private UserRepository userRepository;
 
+    private RoleRepository roleRepository;
+
     private PasswordEncoder passwordEncoder;
 
+
     @Autowired
-    public AuthenticationService(RoleRepository repository, UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    public AuthenticationService(RoleRepository roleRepository, UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.roleRepository = roleRepository;
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;

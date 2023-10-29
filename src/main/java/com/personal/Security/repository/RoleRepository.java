@@ -1,9 +1,9 @@
 package com.personal.Security.repository;
 
 import com.personal.Security.user.Role;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+
 
 import java.util.Optional;
 

@@ -3,12 +3,13 @@ package com.personal.Security.user;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
 
 @Data
 @NoArgsConstructor
 @Entity
 @Table(name = "role", schema = "spring")
-public class Role {
+public class Role implements GrantedAuthority {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

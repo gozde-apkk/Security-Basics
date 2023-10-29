@@ -1,14 +1,15 @@
-package com.personal.Security.services;
+package com.personal.Security.service;
 
 import com.personal.Security.repository.UserRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserService implements UserDetailsService {
-
-    //user'ı nasıl login edeceğimiz sınıf
 
     private UserRepository userRepository;
 
@@ -22,4 +23,8 @@ public class UserService implements UserDetailsService {
         return userRepository.findUserByEmail(username)
                 .orElseThrow(()-> new  UsernameNotFoundException("User is not valid"));
     }
+    //user'ı nasıl login edeceğimiz sınıf
+
+
+
 }
